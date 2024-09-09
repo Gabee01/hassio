@@ -1,7 +1,17 @@
 FROM alpine:3.14
 
 # Install necessary packages
-RUN apk add --no-cache curl supervisor docker
+RUN apk add --no-cache curl supervisor prometheus node_exporter
+
+# Install Loki and Promtail
+RUN curl -LO https://github.com/grafana/loki/releases/download/v2.5.0/loki-linux-amd64.zip && \
+    unzip loki-linux-amd64.zip && \
+    mv loki-linux-amd64 /usr/local/bin/loki && \
+    rm loki-linux-amd64.zip && \
+    curl -LO https://github.com/grafana/loki/releases/download/v2.5.0/promtail-linux-amd64.zip && \
+    unzip promtail-linux-amd64.zip && \
+    mv promtail-linux-amd64 /usr/local/bin/promtail && \
+    rm promtail-linux-amd64.zip
 
 # Copy configuration files
 COPY prometheus.yml /etc/prometheus/prometheus.yml
