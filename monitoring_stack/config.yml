@@ -3,6 +3,7 @@ description: "Prometheus, Node Exporter, Loki, and Promtail stack for Home Assis
 version: "0.1.0"
 slug: "monitoring_stack"
 init: false
+user: root
 arch:
   - aarch64
   - amd64
