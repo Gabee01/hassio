@@ -16,8 +16,3 @@ ports:
 webui: "http://[HOST]:[PORT:9090]"
 startup: application
 boot: auto
-privileged:
-  - NET_ADMIN
-  - SYS_ADMIN
-devices:
-  - /var/run/docker.sock:/var/run/docker.sock
