@@ -4,7 +4,6 @@ FROM alpine:3.14
 RUN apk add --no-cache \
     prometheus \
     node_exporter \
-    influxdb \
     loki \
     promtail \
     supervisor
@@ -13,7 +12,6 @@ RUN apk add --no-cache \
 COPY prometheus.yml /etc/prometheus/prometheus.yml
 COPY loki.yml /etc/loki/loki.yml
 COPY promtail.yml /etc/promtail/promtail.yml
-COPY influxdb.conf /etc/influxdb/influxdb.conf
 
 # Copy run script
 COPY run.sh /

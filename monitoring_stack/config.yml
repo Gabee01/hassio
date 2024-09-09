@@ -1,5 +1,5 @@
 name: "Monitoring Stack"
-description: "Prometheus, Node Exporter, InfluxDB, Loki, and Promtail stack for Home Assistant"
+description: "Prometheus, Node Exporter, Loki, and Promtail stack for Home Assistant"
 version: "0.1.0"
 slug: "monitoring_stack"
 init: false
