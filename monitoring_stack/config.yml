@@ -11,7 +11,7 @@ arch:
   - i386
 ports:
   9090/tcp: 9090
-  9100/tcp: 9100
+  9100/tcp: 9101
   3100/tcp: 3100
 webui: "http://[HOST]:[PORT:9090]"
 startup: application
