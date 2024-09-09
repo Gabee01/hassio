@@ -12,12 +12,6 @@ RUN curl -LO https://github.com/prometheus/prometheus/releases/download/v2.37.0/
     mv prometheus-2.37.0.linux-amd64/prometheus.yml /etc/prometheus/ && \
     rm -rf prometheus-2.37.0.linux-amd64 prometheus-2.37.0.linux-amd64.tar.gz
 
-# Install Node Exporter
-RUN curl -LO https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-amd64.tar.gz && \
-    tar xvfz node_exporter-1.3.1.linux-amd64.tar.gz && \
-    mv node_exporter-1.3.1.linux-amd64/node_exporter /usr/local/bin/ && \
-    rm -rf node_exporter-1.3.1.linux-amd64 node_exporter-1.3.1.linux-amd64.tar.gz
-
 # Install Loki
 RUN curl -LO https://github.com/grafana/loki/releases/download/v2.5.0/loki-linux-amd64.zip && \
     unzip loki-linux-amd64.zip && \
@@ -40,7 +34,7 @@ COPY run.sh /
 RUN chmod a+x /run.sh
 
 # Expose ports
-EXPOSE 9090 9100 3100
+EXPOSE 9090 3100
 
 # Set up supervisord
 COPY supervisord.conf /etc/supervisord.conf
